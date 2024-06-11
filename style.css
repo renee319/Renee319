@@ -1,0 +1,220 @@
+.text-content {
+  padding: 2rem;
+}
+
+.img-fluid {
+  width: 100%;
+  height: auto;
+}
+h1, h2, h3 {
+  color: darkgreen;
+}
+
+.last-columns {
+  margin-left: -calc(33.33% * 3); /* Adjust for different screen sizes if needed */
+}
+
+
+.image_grid {
+  /* Existing grid layout styles */
+  gap: 0; /* Remove spacing between grid items */
+}
+
+.grayscale {
+  filter: grayscale(100%); /* Convert to grayscale */
+}
+p {
+  font-size: 20px;
+}
+p:hover {
+  color: red; /* Change text color to red on hover */
+  font-weight: 900;
+
+}
+body{
+  margin: 0;
+  padding: 0;
+}
+
+###########
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 60;
+}
+
+body {
+  width: 100%;
+  display: flex;
+  font-family: "Verdana";
+
+  overflow-x: hidden; /* Prevent horizontal scrollbar */
+}
+
+h2, h5, h6 {
+  margin: 0.67em 0;
+  font-weight: lighter;
+}
+
+.header-cont {
+  display: flex;
+  flex-direction: row; 
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh; /* Set the height to 100% of the viewport height */
+  padding: 20px; 
+  margin: 40;
+}
+
+.title-cont, .menu-cont {
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  align-items: left;
+  margin-right: 40px; /* Add right margin for cushion */
+}
+
+.outer-cont {
+  max-width: 1300px;
+  margin: 30px auto; /* Center the container */
+  padding: 40px; /* Add left and right padding for cushion */
+}
+
+.card-row-one-cont {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 30px; 
+}
+
+/* Additional CSS for hiding the images initially */
+.image {
+  opacity: 0;
+  transition: opacity 1s ease-in-out; /* Adjust the duration and easing function */
+  /* margin-bottom: 100vh; Add space between each image */
+}
+
+.image.visible {
+  opacity: 1;
+}
+
+.image.art {
+  position: relative;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+}
+
+/* Updated CSS for .gradient class with pulse effect */
+.image.gradient {
+  position: relative;
+  animation: pulse 10s ease-in-out infinite; /* Add pulse animation */
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+/* Style for other images */
+.image:not(.gradient) {
+  /* margin-bottom: 20vh; Add space between each non-gradient image */
+}
+
+.poem.title {
+  position: relative;
+  overflow: hidden;
+  /* margin-bottom: 20px; Add bottom margin for cushion */
+  opacity: 0; /* Set initial opacity to 0 */
+  transform: translateX(-100%); /* Move the text outside of the screen to the left */
+  transition: opacity 4s ease-in-out, transform 4s ease-in-out; /* Add transitions */
+}
+
+.poem {
+  position: relative;
+  overflow: hidden;
+  /* margin-bottom: 20px; Add bottom margin for cushion */
+  opacity: 0; /* Set initial opacity to 0 */
+  transform: translateX(-100%); /* Move the text outside of the screen to the left */
+  transition: opacity 4s ease-in-out, transform 4s ease-in-out; /* Add transitions */
+}
+
+.poem.solution {
+  color: black;
+  position: relative;
+  overflow: hidden;
+  /* margin-bottom: 20px; Add bottom margin for cushion */
+  opacity: 0; /* Set initial opacity to 0 */
+  transform: translateX(+100%); /* Move the text outside of the screen to the left */
+  transition: opacity 4s ease-in-out, transform 4s ease-in-out; /* Add transitions */
+}
+
+.poem.visible {
+  opacity: 1;
+  transform: translateX(0); /* Move the text back to its original position */
+}
+
+.poemtext {
+  position: relative;
+  overflow: hidden;
+  opacity: 0; /* Set initial opacity to 0 */
+  transform: translateX(-100%); /* Move the text outside of the screen to the left */
+  transition: opacity 6s ease-in-out, transform 6s ease-in-out; /* Add transitions */
+}
+
+.poemtext.visible {
+  opacity: 1;
+  transform: translateX(0); /* Move the text back to its original position */
+}
+ 
+
+.bounce {
+  animation: bounce 8s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+
+
+.image:hover {
+  filter: grayscale(100%);
+}
+
+
+#progress-container {
+  width: 100%; /* Adjust width as needed */
+  height: 5px; /* Adjust height as needed */
+  background-color: #ddd;
+  position: fixed; /* Fix the progress bar to the top */
+  top: 0; /* Position it at the top of the page */
+  left: 0; /* Position it at the left of the page */
+  z-index: 100; /* Ensure it's displayed above other elements */
+}
+
+#progress-bar {
+  width: 0%; /* Initial state */
+  height: 100%;
+  background-color: #007bff; /* Adjust color */
+}
